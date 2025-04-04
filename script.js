@@ -230,6 +230,8 @@ function classePage(jogador){
     var gameSection = document.querySelector("#gameSection");
     if ( arrayGerado[jogador - 1] === 'Impostor' ){
         gameSection.innerHTML = `
+        ${personagensBiblicos.indexOf(escolha) === -1 ? '<i class="mdi mdi-church"></i>' : '<i class="mdi mdi-account"></i>' }
+        <h2><strong>${personagensBiblicos.indexOf(escolha) === -1 ? 'Objeto' : 'Personagem' }</strong></h2>
         <p><strong>${jogador}/${arrayGerado.length} JOGADORES</strong></p>
         <div class="circleButton" id="mudar">
         <h2><strong>Você é o ${arrayGerado[jogador-1]}</strong></h2>
@@ -241,6 +243,8 @@ function classePage(jogador){
     } else {
    
         gameSection.innerHTML = `
+        ${personagensBiblicos.indexOf(escolha) === -1 ? '<i class="mdi mdi-church"></i>' : '<i class="mdi mdi-account"></i>' }
+        <h2><strong>${personagensBiblicos.indexOf(escolha) === -1 ? 'Objeto' : 'Personagem' }</strong></h2>
         <p><strong>${jogador}/${arrayGerado.length} JOGADORES</strong></p>
         <div class="circleButton" id="mudar">
         <h2><strong>${arrayGerado[jogador-1]}</strong></h2>
