@@ -182,8 +182,8 @@ function aguardandoPage(jogador){
     var gameSection = document.querySelector("#gameSection");
     if ( jogador <= arrayGerado.length ){
     gameSection.innerHTML = `
-    <i class="mdi mdi-account"></i>
-    <h2><strong>PERSONAGEM</strong></h2>
+    ${personagensBiblicos.indexOf(escolha) === -1 ? '<i class="mdi mdi-church"></i>' : '<i class="mdi mdi-account"></i>' }
+    <h2><strong>${personagensBiblicos.indexOf(escolha) === -1 ? 'Objeto' : 'Personagem' }</strong></h2>
     <p><strong>${jogador}/${arrayGerado.length} JOGADORES</strong></p>
     <p>AGUARDANDO JOGADOR ${jogador}<span id="ponto">.</span></p>
     <input type="button" value="PRÓXIMO" id="ver" class="button">
@@ -255,5 +255,5 @@ function classePage(jogador){
         
         aguardandoPage( jogador + 1 )
     })
-    
+   
 }
